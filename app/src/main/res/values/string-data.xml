@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="keadaan_harta_modal">
+        <item>Sedang Digunakan</item>
+        <item>Tidak Digunakan</item>
+        <item>Perlu Pembaikan</item>
+        <item>Sedang Diselenggara</item>
+        <item>Hilang</item>
+    </string-array>
+
+    <string-array name="jana_laporan">
+        <item>Kewpa.10</item>
+        <item>Kewpa.11</item>
+    </string-array>
+
+
+</resources>

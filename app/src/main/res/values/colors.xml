@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EA1E63</color>
+    <color name="colorPrimaryDark">#D81A60</color>
+
+    <color name="colorAccent">#EA1E63</color>
+    <color name="colorAccentLight">#ED4980</color>
+
+    <color name="grey_hard">#96989A</color>
+    <color name="grey_soft">#f5f5f5</color>
+
+    <color name="grey_bg">#E6E6E6</color>
+
+    <color name="actionbar_opacity">#33000000</color>
+
+    <color name="iron">#CCCCCC</color>
+    <color name="white">#FFFFFF</color>
+    <!--<color name="primary">#E43F3F</color>-->
+
+    <color name="primary">#E43F3F</color>
+    <color name="primary_dark">#E12929</color>
+    <color name="primary_darker">#CC1D1D</color>
+    <color name="accent">#FFFFFF</color>
+
+    <color name="deeppurple">#7c4dff</color>
+    <color name="lightgray">#ededed</color>
+    <color name="testcolorblue">#152b38</color>
+    <color name="green">#00bfa5</color>
+    <color name="yello">#ffb300</color>
+    <color name="orchid">#cd69c9</color>
+    <color name="brown">#cdaa7d</color>
+
+
+
+
+</resources>

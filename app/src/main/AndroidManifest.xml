@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="my.gov.ilpsdk.apps.ecams">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name="my.gov.ilpsdk.apps.ecams.data.GlobalVariable"
+        android:allowBackup="true"
+        android:icon="@drawable/amos"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="my.gov.ilpsdk.apps.ecams.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="my.gov.ilpsdk.apps.ecams.FullScannerFragmentActivity"
+            android:label="SCAN BARCODE"
+            android:uiOptions="splitActionBarWhenNarrow">
+            <meta-data
+                android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow" />
+        </activity>
+        <activity android:name="my.gov.ilpsdk.apps.ecams.FullScannerFragmentActivityZxing"
+
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:label="Amos Barcode Scanner">
+            <meta-data android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow" />
+        </activity>
+        <activity android:name="my.gov.ilpsdk.apps.ecams.AssetsDetailsActivity" />
+        <activity android:name="my.gov.ilpsdk.apps.ecams.AssetListActivity" />
+        <activity android:name="my.gov.ilpsdk.apps.ecams.ScannerActivity" />
+        <activity
+            android:name="my.gov.ilpsdk.apps.ecams.LoginActivity"
+            android:theme="@style/AppTheme.Dark" />
+
+        <service android:name="my.gov.ilpsdk.apps.ecams.services.DbBackgroundServices" />
+
+        <activity
+            android:name="my.gov.ilpsdk.apps.ecams.HomeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme2">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name="my.gov.ilpsdk.apps.ecams.LocationsActivity"
+            android:label="@string/title_activity_locations"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
