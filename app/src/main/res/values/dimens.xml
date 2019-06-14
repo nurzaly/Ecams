@@ -11,4 +11,8 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
 
     <dimen name="recycler_item_size">192dp</dimen>
+    <dimen name="spacing_xmedium">7dp</dimen>
+
+    <dimen name="spacing_xxlarge">50dp</dimen>
+
 </resources>

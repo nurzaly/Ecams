@@ -65,7 +65,7 @@ public class LocationsListAdapter extends RecyclerView.Adapter<LocationsListAdap
             content2 = (TextView) v.findViewById(R.id.content2);
             content3 = (TextView) v.findViewById(R.id.content3);
             content4 = (TextView) v.findViewById(R.id.content4);
-            image = (ImageView) v.findViewById(R.id.image);
+            image = (ImageView) v.findViewById(R.id.avatar);
             lyt_parent = (LinearLayout) v.findViewById(R.id.lyt_parent);
         }
 

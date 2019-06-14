@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             login();
         } else {
             //displayContentView(Constant.FRAGMENT_ID);
-            home();
+            home2();
             //scanner();
             //page_assets_details();
 
@@ -130,6 +130,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void home() {
         Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void home2() {
+        Intent intent = new Intent(this, Home2Activity.class);
         startActivity(intent);
         finish();
     }

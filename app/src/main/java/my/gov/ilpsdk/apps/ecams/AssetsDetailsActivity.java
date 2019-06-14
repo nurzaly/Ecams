@@ -172,7 +172,7 @@ public class AssetsDetailsActivity extends AppCompatActivity{
         veri_data.pemeriksa = myconfig.getString(Constant.KEY_EMAIL,"email");
 
 
-        ImageView ivImage = (ImageView) findViewById(R.id.image);
+        ImageView ivImage = (ImageView) findViewById(R.id.avatar);
         desc1.setText(assets.getBarcode());
         desc2.setText(assets.getNo_siri_pendaftaran());
         desc3.setText(assets.getLokasi().getTitle());
