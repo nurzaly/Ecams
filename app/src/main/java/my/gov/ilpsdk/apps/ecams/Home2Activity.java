@@ -10,11 +10,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
+import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -73,11 +75,11 @@ public class Home2Activity extends AppCompatActivity {
     @BindView(R.id.card_inventori)
     CardView card_inventori;
 
-    @BindView(R.id.card_pengimbas)
-    CardView card_pengimbas;
+    @BindView(R.id.ly_scanner)
+    LinearLayout ly_scanner;
 
-    @BindView((R.id.card_search))
-    CardView card_search;
+    @BindView((R.id.ly_search))
+    LinearLayout ly_search;
 
     private GetSharePref myconfig;
     private String email;
@@ -86,8 +88,8 @@ public class Home2Activity extends AppCompatActivity {
     private Toast toast;
     private List<Locations> locations;
     private String user_level;
-    private CardView card_pegawai_pemeriksa;
-    private  CardView card_kewpa11;
+    private LinearLayout ly_pegawai_pemeriksa;
+    private  LinearLayout ly_generate_report;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,11 +108,11 @@ public class Home2Activity extends AppCompatActivity {
         else{
             setContentView(R.layout.activity_home2);
 
-            card_pegawai_pemeriksa = (CardView)findViewById(R.id.card_pegawai_pemeriksa);
-            card_kewpa11 = (CardView)findViewById(R.id.card_kewpa11);
+            ly_pegawai_pemeriksa = findViewById(R.id.ly_staff_verifier);
+            ly_generate_report = findViewById(R.id.ly_generate_report);
 
-            card_pegawai_pemeriksa.setOnClickListener(clickListener);
-            card_kewpa11.setOnClickListener(clickListener);
+            ly_pegawai_pemeriksa.setOnClickListener(clickListener);
+            ly_generate_report.setOnClickListener(clickListener);
         }
 
         // TODO: 14/6/2019  
@@ -118,8 +120,8 @@ public class Home2Activity extends AppCompatActivity {
         ButterKnife.bind(this);
         card_hartamodal.setOnClickListener(clickListener);
         card_inventori.setOnClickListener(clickListener);
-        card_pengimbas.setOnClickListener(clickListener);
-        card_search.setOnClickListener(clickListener);
+        ly_scanner.setOnClickListener(clickListener);
+        ly_search.setOnClickListener(clickListener);
 
         set_profile();
         count_user_aset();
@@ -260,7 +262,7 @@ public class Home2Activity extends AppCompatActivity {
             if(myconfig.getBoolean(Constant.KEY_LOGIN,false) == true){
                 String avatar_url = myconfig.getString(Constant.KEY_AVATAR, "avatar");
                 staf_name.setText(myconfig.getString(Constant.KEY_NAMA, "Nama"));
-                //bahagian.setText(myconfig.getString(Constant.KEY_NAMA_BAHAGIAN, "Nama Bahagian"));
+                bahagian.setText(myconfig.getString(Constant.KEY_NAMA_BAHAGIAN, "Nama Bahagian"));
                 Picasso.with(getApplicationContext()).load(avatar_url).transform(new CropCircleTransformation()).into(avatar);
             }
             else{
@@ -428,18 +430,18 @@ public class Home2Activity extends AppCompatActivity {
                 case R.id.card_inventori:
                     AssetListActivity.navigate(Home2Activity.this, Constant.URL_ASSETS_JENIS+"?jenis_aset=I&nama="+nama, "Senarai Inventori");
                     break;
-                case R.id.card_pegawai_pemeriksa:
+                case R.id.ly_staff_verifier:
                     page_pegawai_aset();
                     break;
-                case R.id.card_pengimbas:
+                case R.id.ly_scanner:
                     //new RunBarcodeScanner().launchActivity(FullScannerFragmentActivityZxing.class, HomeActivity.this, HomeActivity.this, 2);
                     //startScan();
                     scanner();
                     break;
-                case R.id.card_search:
+                case R.id.ly_search:
                     showInputDialog();
                     break;
-                case R.id.card_kewpa11:
+                case R.id.ly_generate_report:
                     get_locations("kewpa11");
                     break;
             }
