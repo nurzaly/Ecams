@@ -113,7 +113,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/deep_purple_500"
+                    app:cardBackgroundColor="@color/indigo_500"
                     app:cardCornerRadius="6dp"
                     app:cardElevation="2dp"
                     app:cardUseCompatPadding="true">
@@ -164,7 +164,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/deep_purple_500"
+                    app:cardBackgroundColor="@color/indigo_500"
                     app:cardCornerRadius="6dp"
                     app:cardElevation="2dp"
                     app:cardUseCompatPadding="true">
@@ -257,7 +257,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:tint="@color/deep_purple_500"
+                            android:tint="@color/indigo_500"
                             app:srcCompat="@drawable/ic_barcode_scanner" />
 
                         <TextView
@@ -299,7 +299,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:background="@color/transparent"
-                            android:tint="@color/deep_purple_500"
+                            android:tint="@color/indigo_500"
                             app:srcCompat="@drawable/ic_search" />
 
                         <TextView
@@ -340,7 +340,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:background="@color/transparent"
-                            android:tint="@color/deep_purple_500"
+                            android:tint="@color/indigo_500"
                             app:srcCompat="@drawable/ic_peoples" />
 
                         <TextView
@@ -381,7 +381,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:background="@color/transparent"
-                            android:tint="@color/deep_purple_500"
+                            android:tint="@color/indigo_500"
                             app:srcCompat="@drawable/ic_subject" />
 
                         <TextView

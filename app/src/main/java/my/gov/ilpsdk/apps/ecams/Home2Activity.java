@@ -81,6 +81,12 @@ public class Home2Activity extends AppCompatActivity {
     @BindView((R.id.ly_search))
     LinearLayout ly_search;
 
+    @BindView((R.id.ly_staff_verifier))
+    LinearLayout ly_staff_verifier;
+
+    @BindView((R.id.ly_generate_report))
+    LinearLayout ly_generate_report;
+
     private GetSharePref myconfig;
     private String email;
     private String bahagians;
@@ -88,8 +94,6 @@ public class Home2Activity extends AppCompatActivity {
     private Toast toast;
     private List<Locations> locations;
     private String user_level;
-    private LinearLayout ly_pegawai_pemeriksa;
-    private  LinearLayout ly_generate_report;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,28 +104,21 @@ public class Home2Activity extends AppCompatActivity {
         email = myconfig.getString(Constant.KEY_EMAIL, null);
         bahagians = myconfig.getString(Constant.KEY_BAHAGIAN,"bahagian");
         nama = myconfig.getString(Constant.KEY_NAMA,"nama");
-        initToolbar();
 
-        if(user_level.equals("staf")){
-            setContentView(R.layout.activity_home_staf);
-        }
-        else{
-            setContentView(R.layout.activity_home2);
-
-            ly_pegawai_pemeriksa = findViewById(R.id.ly_staff_verifier);
-            ly_generate_report = findViewById(R.id.ly_generate_report);
-
-            ly_pegawai_pemeriksa.setOnClickListener(clickListener);
-            ly_generate_report.setOnClickListener(clickListener);
-        }
-
-        // TODO: 14/6/2019  
-
+        setContentView(R.layout.activity_home2);
         ButterKnife.bind(this);
+
+        ly_staff_verifier.setOnClickListener(clickListener);
+        ly_generate_report.setOnClickListener(clickListener);
         card_hartamodal.setOnClickListener(clickListener);
         card_inventori.setOnClickListener(clickListener);
         ly_scanner.setOnClickListener(clickListener);
         ly_search.setOnClickListener(clickListener);
+
+        if(user_level.equals("staf")){
+            ly_staff_verifier.setVisibility(View.GONE);
+            ly_generate_report.setVisibility(View.GONE);
+        }
 
         set_profile();
         count_user_aset();
@@ -407,17 +404,6 @@ public class Home2Activity extends AppCompatActivity {
     }
     private void searchAssets(String search_key){
         AssetListActivity.navigate(Home2Activity.this, Constant.URL_SEARCH_ASSETS+"?search_key="+search_key, "Senarai Aset");
-    }
-
-    private void initToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.deep_purple_500), PorterDuff.Mode.SRC_ATOP);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(null);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Tools.setSystemBarColor(this, R.color.grey_5);
-        Tools.setSystemBarLight(this);
     }
 
     private View.OnClickListener clickListener = new View.OnClickListener() {
